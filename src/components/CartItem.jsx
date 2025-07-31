@@ -13,6 +13,10 @@ const CartItem = ({ onContinueShopping }) => {
       .toFixed(2);
   };
 
+  const calculateTotalItems = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
+
   const handleIncrement = (item) => {
     dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }));
   };
@@ -36,9 +40,11 @@ const CartItem = ({ onContinueShopping }) => {
 
   return (
     <div className="cart-container">
-      <h2 className="total-cart-amount">
-        Total Cart Amount: ${calculateTotalAmount()}
-      </h2>
+     
+        <h2 className="total-cart-amount">
+          <span className="cart-summary">Total Items in Cart: </span>{calculateTotalItems()} (${calculateTotalAmount()})
+        </h2>
+
       <div>
         {cart.length === 0 ? (
           <div className="empty-cart">
@@ -93,7 +99,7 @@ const CartItem = ({ onContinueShopping }) => {
         <Button variant="primary" onClick={onContinueShopping}>
           Continue Shopping
         </Button>
-        <Button variant="primary" disabled={cart.length === 0}>
+        <Button variant="primary" disabled={cart.length === 0} onClick={() => alert('Coming Soon!')}>
           Checkout
         </Button>
       </div>

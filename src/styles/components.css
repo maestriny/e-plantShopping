@@ -324,6 +324,11 @@
   padding: 5px;
 }
 
+.cart-summary {
+  opacity: 0.8;
+  font-weight: 600;
+}
+
 /* Media Queries */
 @media screen and (max-width: 768px) {
   .cart-item {
