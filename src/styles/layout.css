@@ -1,0 +1,414 @@
+.app-container {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.landing-page {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.landing-page.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  filter: brightness(0.8);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.65);
+  box-sizing: border-box;
+}
+
+.landing-content {
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 2rem;
+  overflow: visible;
+}
+
+.product-list-container {
+  position: absolute;
+  overflow-x: hidden;
+  top: 100vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: top 0.5s ease;
+  overflow-y: auto;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+}
+
+.product-list-container.visible {
+  top: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-green) !important;
+  color: var(--white) !important;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  position: relative;
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.navbar .ul div a,
+.navbar-center a,
+.navbar-right a {
+  color: var(--white);
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.tag {
+  width: 400px;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin-left: 20px;
+}
+
+.tag-icon {
+  cursor: pointer;
+}
+
+.tag a {
+  text-decoration: none;
+}
+
+.tag-home-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.tag-home-link h3 {
+  color: var(--white);
+  margin-bottom: -10px;
+  font-size: 26px;
+}
+
+.tag-home-link i {
+  color: var(--white);
+  font-size: 15px;
+}
+
+.luxury {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 19px;
+  transition: all 0.3s ease;
+}
+
+.luxury:hover {
+  transform: scale(1.02);
+}
+
+.luxury svg {
+  transition: all 0.3s ease;
+}
+
+.luxury:hover svg {
+  transform: rotate(5deg);
+}
+
+.cart {
+  color: var(--white);
+  display: flex;
+  margin-right: 10px;
+}
+
+/* Product Grid */
+.product-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card {
+  flex: 0 0 calc(33.33% - 20px);
+  max-width: calc(26.33% - 20px);
+  margin-bottom: 20px;
+}
+
+/* Plant Categories */
+.plant-name-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plant-category {
+  background-color: rgb(243, 239, 239);
+  padding: 10px;
+  border-radius: 20px;
+  margin: 20px 100px;
+}
+
+.plant-heading {
+  width: 400px;
+  text-align: center;
+  margin: 20px;
+  border-left: none;
+  border-right: none;
+  color: var(--deep-forest);
+  font-weight: 700;
+  padding: 10px 0;
+}
+
+/* Cart */
+.cart-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 300px);
+}
+
+/* Media Queries */
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .product-card {
+    flex: 1 1 calc(33.33% - 15px);
+    max-width: none;
+    min-width: 300px;
+  }
+
+  .product-list {
+    gap: 30px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .content {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .landing-content {
+    padding: 20px;
+  }
+
+  .product-card {
+    flex: 1 1 calc(50% - 15px);
+    max-width: none;
+    min-width: 320px;
+  }
+
+  .product-list {
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .plant-category {
+    margin: 20px 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .landing-content {
+    padding: 20px;
+  }
+
+  .landing-page {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .product-card {
+    flex: 1 1 calc(50% - 10px);
+    max-width: none;
+    min-width: 280px;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    padding: 10px 15px;
+  }
+
+  .tag {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+
+  .navbar-center {
+    position: static;
+    transform: none;
+    left: auto;
+    flex: 1 1 100%;
+    justify-content: center;
+    order: 2;
+  }
+
+  .navbar-right {
+    flex: 0 0 auto;
+    position: absolute;
+    right: 15px;
+    top: -5px;
+    order: 1;
+  }
+
+  .cart-container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .total-cart-amount {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) and (min-width: 481px) {
+  .product-card {
+    flex: 1 1 calc(100% - 20px);
+    max-width: none;
+    min-width: auto;
+    margin: 0 10px 20px 10px;
+    width: calc(100% - 20px);
+  }
+
+  .landing-content {
+    padding: 20px;
+  }
+
+  .product-list {
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .landing-page {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .content {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .landing-content {
+    padding: 20px;
+  }
+
+  .product-card {
+    flex: 1 1 100%;
+    max-width: none;
+    min-width: auto;
+    margin: 0 5px 20px 5px;
+    width: calc(100% - 10px);
+  }
+
+  .product-list {
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .plant-category {
+    margin: 20px 20px;
+  }
+
+  .navbar {
+    padding: 8px 10px;
+  }
+
+  .cart-container {
+    padding: 0.75rem;
+    gap: 1rem;
+  }
+
+  .total-cart-amount {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+  }
+
+  @media (max-width: 400px) {
+    .tag-home-link {
+      display: none;
+    }
+  }
+}

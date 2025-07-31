@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --primary-green: #2d7d6e;
+  --primary-green-hover: #1f594e;
+  --secondary-green: #52b788;
+  --accent-color: #f72585;
+  --accent-hover: #d90368;
+
+  --text-dark: #264653;
+  --text-light: #6c757d;
+  --white: #ffffff;
+
+  --light-gray: #f8f9fa;
+  --warm-cream: #f4f3ee;
+  --soft-sage: #a8dadc;
+  --deep-forest: #1d3557;
+  --sunset-orange: #f77f00;
+
+  --border-color: #e9ecef;
+  --shadow: 0 4px 12px rgba(45, 125, 110, 0.1);
+  --shadow-hover: 0 8px 25px rgba(45, 125, 110, 0.2);
+  --border-radius: 16px;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: linear-gradient(
+    135deg,
+    var(--warm-cream) 0%,
+    var(--light-gray) 100%
+  );
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: inherit;
+}
+
+.text-dark {
+  color: var(--text-dark);
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+.divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-green),
+    var(--secondary-green)
+  );
+  margin: 12px 0;
+  border-radius: 2px;
+}
